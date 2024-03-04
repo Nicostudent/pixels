@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  // State to store random IDs
+  const [randomIds, setRandomIds] = useState(generateRandomIds());
+
+  // Function to generate 4 random IDs
+  function generateRandomIds() {
+    return Array.from({ length: 4 }, () => generateRandomNumber());
+  }
+
+  // Function to generate a random number
+  function generateRandomNumber() {
+    return Math.floor(Math.random() * 5000) + 1;
+  }
+
+  // Function to handle button click
+  function handleButtonClick() {
+    setRandomIds(generateRandomIds());
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-black h-screen grid grid-cols-2 grid-rows-2 gap-4">
+      {randomIds.map((id, index) => (
+        <div key={index} className="relative">
+          <p className="absolute top-0 left-0 right-0 bottom-0 ml-auto mr-auto w-fit h-fit px-2 rounded  text-white">{id}</p>
+          <iframe
+            className="w-full h-full"
+            title={`Renderizado de URL ${index}`}
+            src={`https://play.pixels.xyz/pixels/share/${id}`}
+          ></iframe>
+        </div>
+      ))}
+      <button
+        className="bg-blue-500 opacity-40 text-white px-4 py-2 rounded absolute top-0 bottom-0 left-0 right-0 m-auto h-12 hover:bg-transparent"
+        onClick={handleButtonClick}
+      >
+        Random lands
+      </button>
+        <a className='absolute bottom-0 left-0 right-0 top-0 mr-auto ml-auto mt-10 w-36 h-fit'
+         href='https://cafecito.app/nicopixels' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_1.png' alt='Invitame un café en cafecito.app' /></a>
     </div>
   );
-}
+};
 
 export default App;
