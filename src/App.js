@@ -33,7 +33,7 @@ const App = () => {
         </div>
       ))}
       <button
-        className="bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded absolute top-0 bottom-0 left-0 right-0 m-auto h-12"
+        className="bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded absolute top-0 bottom-0 left-0 right-0 m-auto w-fit h-12"
         onClick={handleButtonClick}
       >
        Click para Buscar lands
