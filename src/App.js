@@ -7,7 +7,7 @@ const App = () => {
 
   // Function to generate 4 random IDs
   function generateRandomIds() {
-    return Array.from({ length: 4 }, () => generateRandomNumber());
+    return Array.from({ length: 1 }, () => generateRandomNumber());
   }
 
   // Function to generate a random number
@@ -33,12 +33,12 @@ const App = () => {
         </div>
       ))}
       <button
-        className="bg-blue-500 opacity-40 text-white px-4 py-2 rounded absolute top-0 bottom-0 left-0 right-0 m-auto h-12 hover:bg-transparent"
+        className="bg-blue-500 hover:bg-blue-300 text-white px-4 py-2 rounded absolute top-0 bottom-0 left-0 right-0 m-auto h-12"
         onClick={handleButtonClick}
       >
-        Random lands
+       Click para Buscar lands
       </button>
-        <a className='absolute bottom-0 left-0 right-0 top-0 mr-auto ml-auto mt-10 w-36 h-fit'
+        <a className='absolute top-0 bottom-0 left-0 right-0 ml-auto mr-auto  w-fit h-fit hover:border-2 hover:rounded m-2'
          href='https://cafecito.app/nicopixels' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_1.png' alt='Invitame un café en cafecito.app' /></a>
     </div>
   );
