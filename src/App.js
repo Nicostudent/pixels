@@ -7,7 +7,7 @@ const App = () => {
 
   // Function to generate 4 random IDs
   function generateRandomIds() {
-    return Array.from({ length: 1 }, () => generateRandomNumber());
+    return Array.from({ length: 4 }, () => generateRandomNumber());
   }
 
   // Function to generate a random number
